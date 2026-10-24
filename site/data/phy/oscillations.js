@@ -1,0 +1,51 @@
+NEET.ch("phy-oscillations", {
+  intro: "Periodic motion · Simple harmonic motion · Velocity and acceleration · Energy in SHM · Spring and pendulum",
+  given: "Take g = 10 m/s² unless stated otherwise.",
+  secs: [
+    ["Simple Harmonic Motion", [
+      ["p", "SHM is motion where the restoring force is proportional to displacement and directed towards the mean position: F = −kx, so a = −ω²x."],
+      ["box", "Equations of SHM", ["x = A sin(ωt + φ)", "v = ω√(A² − x²); v<sub>max</sub> = Aω at the mean position", "a = −ω²x; a<sub>max</sub> = Aω² at the extremes", "ω = 2π/T = 2πf"]],
+      ["ul", ["Velocity leads displacement by π/2; acceleration leads velocity by π/2 (and is opposite to displacement).", "All SHMs are periodic, but not all periodic motions are SHM (uniform circular motion is periodic; its projection is SHM)."]],
+      ["ex", "A particle in SHM has amplitude 5 cm and period 2 s. Find its maximum speed and acceleration.", "ω = π rad/s. v<sub>max</sub> = 5π ≈ <b>15.7 cm/s</b>; a<sub>max</sub> = 5π² ≈ <b>49.3 cm/s²</b>."],
+      ["ex", "At what displacement is the speed half the maximum?", "ω√(A² − x²) = Aω/2 → x = <b>(√3/2)A</b>."],
+    ]],
+    ["Energy in SHM", [
+      ["box", "Energy", ["KE = ½mω²(A² − x²)", "PE = ½mω²x²", "Total E = ½mω²A² = ½kA² (constant)", "KE = PE at x = A/√2"]],
+      ["ul", ["KE and PE each oscillate with frequency 2f (twice the SHM frequency).", "Total energy ∝ A²."]],
+      ["ex", "Find the fraction of total energy that is kinetic at x = A/2.", "KE/E = (A² − A²/4)/A² = <b>3/4</b>."],
+    ]],
+    ["Spring–Mass System", [
+      ["box", "Springs", ["T = 2π√(m/k)", "Springs in series: 1/k = 1/k₁ + 1/k₂", "Springs in parallel: k = k₁ + k₂", "Cutting a spring into n equal parts: each has stiffness nk"]],
+      ["ul", ["T doesn't depend on g, so a spring clock works the same on the Moon.", "Vertical spring: T = 2π√(m/k) = 2π√(x₀/g), where x₀ is the static extension."]],
+      ["ex", "A 1 kg mass on a spring of k = 100 N/m. Find the period.", "T = 2π√(1/100) = 2π/10 ≈ <b>0.63 s</b>."],
+    ]],
+    ["Simple Pendulum", [
+      ["box", "Pendulum", ["T = 2π√(l/g) (small angles)", "Seconds pendulum: T = 2 s, l ≈ 1 m", "Lift accelerating up: g<sub>eff</sub> = g + a; down: g − a; free fall: T → ∞"]],
+      ["ul", ["T doesn't depend on the bob's mass or (for small angles) the amplitude.", "On the Moon (g/6), a pendulum's period becomes √6 times.", "A pendulum clock loses time in summer (l increases) and gains in winter."]],
+      ["ex", "A pendulum's length is increased by 21%. Find the change in period.", "T ∝ √l: √1.21 = 1.1, so T increases by <b>10%</b>."],
+      ["tip", "Quick percentage rule for small changes: ΔT/T = ½(Δl/l). A 2% increase in length gives about 1% increase in period."],
+    ]],
+  ],
+  rev: [
+    "SHM: a = −ω²x.",
+    "v<sub>max</sub> = Aω at the mean; a<sub>max</sub> = Aω² at the extremes.",
+    "Total energy = ½kA², constant.",
+    "KE = PE at x = A/√2.",
+    "Spring T = 2π√(m/k), independent of g.",
+    "Pendulum T = 2π√(l/g), independent of mass.",
+  ],
+  mcq: [
+    ["If the length of a simple pendulum is made 4 times, its time period becomes:", ["4 times", "Half", "2 times", "Unchanged"], 2, "T ∝ √l."],
+    ["In SHM, the acceleration is maximum at:", ["The mean position", "The extreme positions", "Half amplitude", "Everywhere equal"], 1, "a = −ω²x is largest at x = ±A."],
+    ["KE equals PE in SHM at a displacement of:", ["A/2", "A/√2", "A/4", "A"], 1, "½k(A² − x²) = ½kx² → x = A/√2."],
+    ["The time period of a spring–mass system on the Moon compared to Earth is:", ["Same", "√6 times", "1/√6 times", "6 times"], 0, "T = 2π√(m/k) doesn't involve g."],
+    ["Two springs of constant k each are connected in series. The effective constant is:", ["2k", "k", "k/2", "4k"], 2, "1/k<sub>eff</sub> = 2/k."],
+    ["A particle has SHM x = 4 sin(2πt) cm. Its maximum speed is:", ["4 cm/s", "8π cm/s", "2π cm/s", "16π cm/s"], 1, "Aω = 4 × 2π = 8π cm/s."],
+    ["The total energy of a particle in SHM is proportional to:", ["A", "A²", "1/A", "√A"], 1, "E = ½kA²."],
+    ["A simple pendulum in a freely falling lift will:", ["Oscillate faster", "Oscillate slower", "Not oscillate", "Oscillate with the same period"], 2, "g<sub>eff</sub> = 0, so T is infinite."],
+    ["A spring of constant k is cut into two equal halves. The spring constant of each half is:", ["k/2", "k", "2k", "4k"], 2, "k ∝ 1/length."],
+    ["The frequency of oscillation of kinetic energy of a particle in SHM of frequency f is:", ["f/2", "f", "2f", "4f"], 2, "KE ∝ cos², which repeats twice per cycle."],
+    ["The phase difference between displacement and acceleration in SHM is:", ["0", "π/2", "π", "π/4"], 2, "a = −ω²x, so they are opposite in phase."],
+    ["The length of a seconds pendulum is about:", ["0.25 m", "1 m", "2 m", "9.8 m"], 1, "T = 2 s → l = gT²/4π² ≈ 1 m."],
+  ],
+});

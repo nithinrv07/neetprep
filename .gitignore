@@ -1,0 +1,7 @@
+.claude/
+.vercel/
+site/.vercel/
+node_modules/
+neet-notebook.html
+.DS_Store
+Thumbs.db

@@ -1,0 +1,51 @@
+NEET.ch("phy-dual-nature", {
+  intro: "Electron emission · Photoelectric effect · Einstein's equation · Photon picture · de Broglie waves · Davisson–Germer experiment",
+  given: "h = 6.63 × 10⁻³⁴ J s, e = 1.6 × 10⁻¹⁹ C, hc ≈ 1240 eV nm = 12400 eV Å.",
+  secs: [
+    ["Photoelectric Effect: Experimental Facts", [
+      ["ul", [
+        "Emission is <b>instantaneous</b> (no time lag).",
+        "No emission below a <b>threshold frequency</b> ν₀, however intense the light.",
+        "Photocurrent (number of electrons) ∝ <b>intensity</b>.",
+        "Maximum KE of electrons depends on <b>frequency</b>, not intensity.",
+        "Stopping potential V₀ depends on frequency, not intensity; saturation current depends on intensity.",
+      ]],
+      ["p", "These facts can't be explained by the wave theory. Einstein explained them using photons."],
+    ]],
+    ["Einstein's Photoelectric Equation", [
+      ["box", "Photon picture", ["Photon energy E = hν = hc/λ; momentum p = h/λ", "KE<sub>max</sub> = hν − φ₀ = eV₀", "Work function φ₀ = hν₀ = hc/λ₀", "λ (nm) ≈ 1240 / E (eV)"]],
+      ["ul", ["Graph of V₀ vs ν is a straight line with slope h/e and intercept −φ₀/e on the V axis; the ν-intercept is ν₀.", "The slope h/e is the same for all metals."]],
+      ["ex", "Light of 5 eV falls on a metal of work function 2 eV. Find the stopping potential.", "KE<sub>max</sub> = 3 eV, so V₀ = <b>3 V</b>."],
+      ["ex", "The threshold wavelength of a metal is 620 nm. Find its work function.", "φ = 1240/620 = <b>2 eV</b>."],
+      ["tip", "Doubling intensity doubles the current but leaves stopping potential unchanged. Raising frequency raises the stopping potential."],
+    ]],
+    ["Matter Waves", [
+      ["box", "de Broglie wavelength", ["λ = h/p = h/mv = h/√(2mK)", "Electron accelerated through V volts: λ = 12.27/√V Å", "Charged particle through V: λ = h/√(2mqV)", "Thermal neutron at T: λ = h/√(3mkT)"]],
+      ["ul", ["For the same KE, lighter particles have longer λ.", "For the same momentum, all particles have the same λ.", "Davisson and Germer confirmed electron waves by diffraction from a nickel crystal (54 V, peak at 50°)."]],
+      ["ex", "Find λ of an electron accelerated through 100 V.", "λ = 12.27/√100 = <b>1.227 Å</b>."],
+      ["ex", "A proton and an alpha particle are accelerated through the same voltage. Compare their de Broglie wavelengths.", "λ ∝ 1/√(mq). m<sub>α</sub>q<sub>α</sub> = 4m × 2e = 8 × m<sub>p</sub>e. So λ<sub>p</sub>/λ<sub>α</sub> = √8 = <b>2√2</b>."],
+    ]],
+  ],
+  rev: [
+    "No emission below ν₀, whatever the intensity.",
+    "Current ∝ intensity; KE<sub>max</sub> and V₀ depend on frequency.",
+    "eV₀ = hν − φ₀; slope of V₀–ν graph = h/e.",
+    "λ (nm) ≈ 1240/E (eV).",
+    "λ = h/p; electron: 12.27/√V Å.",
+    "Davisson–Germer proved electron diffraction.",
+  ],
+  mcq: [
+    ["Light of 5 eV falls on a metal of work function 2 eV. The stopping potential is:", ["2 V", "3 V", "5 V", "7 V"], 1, "KE<sub>max</sub> = 3 eV → V₀ = 3 V."],
+    ["The wavelength of a photon of energy 6.2 eV is about:", ["100 nm", "200 nm", "400 nm", "620 nm"], 1, "1240/6.2 = 200 nm."],
+    ["The photoelectric current depends on:", ["Frequency only", "Intensity of light", "Work function only", "Stopping potential"], 1, "More photons → more electrons."],
+    ["The maximum kinetic energy of photoelectrons depends on:", ["Intensity", "Frequency", "Exposure time", "Area of plate"], 1, "KE<sub>max</sub> = hν − φ₀."],
+    ["The slope of the stopping potential versus frequency graph is:", ["h", "e", "h/e", "e/h"], 2, "eV₀ = hν − φ₀ → V₀ = (h/e)ν − φ₀/e."],
+    ["The de Broglie wavelength of an electron accelerated through 400 V is about:", ["0.61 Å", "1.23 Å", "12.27 Å", "0.31 Å"], 0, "12.27/20 ≈ 0.61 Å."],
+    ["A proton and an electron have the same de Broglie wavelength. They have the same:", ["Speed", "Kinetic energy", "Momentum", "Mass"], 2, "λ = h/p."],
+    ["If the intensity of incident light is doubled, the stopping potential:", ["Doubles", "Halves", "Stays the same", "Becomes zero"], 2, "It depends only on frequency."],
+    ["Davisson–Germer experiment demonstrated:", ["Particle nature of light", "Wave nature of electrons", "Quantisation of charge", "Photoelectric effect"], 1, "Electron diffraction from a nickel crystal."],
+    ["The work function of a metal is 3.1 eV. Its threshold wavelength is:", ["400 nm", "310 nm", "620 nm", "200 nm"], 0, "1240/3.1 = 400 nm."],
+    ["For the same kinetic energy, which has the longest de Broglie wavelength?", ["Electron", "Proton", "Neutron", "Alpha particle"], 0, "λ = h/√(2mK); smallest mass → longest λ."],
+    ["Photoelectric emission is:", ["Delayed by a few seconds", "Instantaneous", "Delayed for low intensity", "Only at high temperature"], 1, "No measurable time lag (< 10⁻⁹ s)."],
+  ],
+});

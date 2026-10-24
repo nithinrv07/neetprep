@@ -1,0 +1,95 @@
+NEET.ch("phy-units", {
+  intro: "SI units · Dimensions · Dimensional analysis · Significant figures · Errors",
+  secs: [
+    ["SI Units", [
+      ["p", "Every physical quantity is a number times a unit. The SI system has <b>seven base units</b>; all other units are derived from them."],
+      ["tbl", ["Base quantity", "SI unit", "Symbol"], [
+        ["Length", "metre", "m"], ["Mass", "kilogram", "kg"], ["Time", "second", "s"],
+        ["Electric current", "ampere", "A"], ["Temperature", "kelvin", "K"],
+        ["Amount of substance", "mole", "mol"], ["Luminous intensity", "candela", "cd"]]],
+      ["ul", [
+        "Supplementary units: plane angle in <b>radian</b> (rad), solid angle in <b>steradian</b> (sr). Both are dimensionless.",
+        "1 light year = 9.46 × 10¹⁵ m (distance light travels in one year). 1 parsec = 3.08 × 10¹⁶ m ≈ 3.26 ly.",
+        "1 AU (astronomical unit) = 1.496 × 10¹¹ m. 1 Å = 10⁻¹⁰ m. 1 fermi = 10⁻¹⁵ m.",
+      ]],
+      ["tip", "Light year and parsec are units of <b>distance</b>, not time. This is a favourite trap."],
+    ]],
+    ["Dimensions", [
+      ["p", "The dimensions of a quantity show how it depends on the base quantities, written as [M<sup>a</sup> L<sup>b</sup> T<sup>c</sup> A<sup>d</sup> K<sup>e</sup>]."],
+      ["tbl", ["Quantity", "Dimensional formula"], [
+        ["Force, weight", "[M L T⁻²]"], ["Work, energy, torque", "[M L² T⁻²]"], ["Power", "[M L² T⁻³]"],
+        ["Pressure, stress, Young's modulus", "[M L⁻¹ T⁻²]"], ["Momentum, impulse", "[M L T⁻¹]"],
+        ["Planck's constant, angular momentum", "[M L² T⁻¹]"], ["Gravitational constant G", "[M⁻¹ L³ T⁻²]"],
+        ["Surface tension, spring constant", "[M T⁻²]"], ["Coefficient of viscosity η", "[M L⁻¹ T⁻¹]"],
+        ["Charge", "[A T]"], ["Potential difference", "[M L² T⁻³ A⁻¹]"], ["Resistance", "[M L² T⁻³ A⁻²]"],
+        ["Capacitance", "[M⁻¹ L⁻² T⁴ A²]"], ["Magnetic field B", "[M T⁻² A⁻¹]"]]],
+      ["ul", [
+        "Strain, refractive index, angle, relative density are <b>dimensionless</b>.",
+        "Quantities with the same dimensions: work, energy and torque; pressure, stress and energy density; frequency, angular velocity and velocity gradient.",
+      ]],
+    ]],
+    ["Dimensional Analysis and its Uses", [
+      ["box", "Principle of homogeneity", ["Only quantities with the same dimensions can be added, subtracted or equated.", "Every term on both sides of a correct equation has the same dimensions."]],
+      ["ul", [
+        "<b>Check</b> whether an equation is dimensionally correct.",
+        "<b>Convert</b> units: n₁u₁ = n₂u₂, so n₂ = n₁[M₁/M₂]<sup>a</sup>[L₁/L₂]<sup>b</sup>[T₁/T₂]<sup>c</sup>.",
+        "<b>Derive</b> a relation when the quantity is a product of powers of others.",
+        "Limitations: cannot find dimensionless constants (like 2π or ½), cannot handle sums of terms, trig, log or exponential functions.",
+      ]],
+      ["ex", "The period of a simple pendulum depends on its length l and g. Find the relation by dimensions.", "Let T = k l<sup>a</sup> g<sup>b</sup>. [T] = [L]<sup>a</sup>[L T⁻²]<sup>b</sup>. Comparing: L: a + b = 0, T: −2b = 1. So b = −½, a = ½, giving <b>T = k√(l/g)</b>. (Experiment gives k = 2π.)"],
+      ["ex", "Convert 1 N into dyne.", "1 N = 1 kg m s⁻². In CGS: 1000 g × 100 cm s⁻² = <b>10⁵ dyne</b>."],
+      ["ex", "In x = A sin(ωt), x is in metres and t in seconds. Find the dimensions of ω.", "The argument of sine must be dimensionless, so ωt has no dimensions. <b>[ω] = [T⁻¹]</b>."],
+      ["tip", "In NEET, if options have different dimensions, check them first. It often removes most options instantly."],
+    ]],
+    ["Significant Figures", [
+      ["ul", [
+        "All non-zero digits are significant.",
+        "Zeros between non-zero digits are significant: 2008 has 4.",
+        "Leading zeros are not significant: 0.0052 has 2.",
+        "Trailing zeros after a decimal point are significant: 2.500 has 4.",
+        "Trailing zeros in a whole number without a decimal point are not significant (4500 has 2); in 4.500 × 10³ there are 4.",
+      ]],
+      ["box", "Rules for calculations", ["Multiplication/division: keep as many significant figures as the <b>least</b> precise number.", "Addition/subtraction: keep as many <b>decimal places</b> as the number with the fewest decimal places."]],
+      ["ex", "Find 4.237 × 2.51 to correct significant figures.", "4.237 × 2.51 = 10.63487. The least is 3 significant figures, so the answer is <b>10.6</b>."],
+      ["ex", "Add 3.2 + 12.465 + 0.07.", "Sum = 15.735. Fewest decimal places is 1, so the answer is <b>15.7</b>."],
+    ]],
+    ["Errors in Measurement", [
+      ["box", "Error formulas", [
+        "Mean absolute error: Δa = (|Δa₁| + |Δa₂| + … )/n",
+        "Relative error = Δa / a;  percentage error = (Δa / a) × 100",
+        "Z = A ± B  →  ΔZ = ΔA + ΔB (absolute errors add)",
+        "Z = AB or A/B  →  ΔZ/Z = ΔA/A + ΔB/B (relative errors add)",
+        "Z = A<sup>p</sup>B<sup>q</sup>/C<sup>r</sup>  →  ΔZ/Z = pΔA/A + qΔB/B + rΔC/C"]],
+      ["ul", [
+        "<b>Systematic errors</b> (instrumental, zero error, personal) act in one direction; reduced by better technique.",
+        "<b>Random errors</b> are irregular; reduced by taking many readings and averaging.",
+        "Least count error: the smallest value an instrument can measure (vernier calliper 0.01 cm, screw gauge 0.001 cm).",
+      ]],
+      ["ex", "The radius of a sphere is measured with 2% error. Find the percentage error in its volume.", "V ∝ r³, so ΔV/V = 3 × Δr/r = 3 × 2% = <b>6%</b>."],
+      ["ex", "Resistance R = V/I, with V = (100 ± 5) V and I = (10 ± 0.2) A. Find the percentage error in R.", "ΔR/R = 5/100 + 0.2/10 = 0.05 + 0.02 = <b>7%</b>."],
+      ["tip", "The quantity with the highest power contributes the largest error. Measure it most carefully."],
+    ]],
+  ],
+  rev: [
+    "There are 7 SI base units; radian and steradian are dimensionless.",
+    "Light year and parsec measure distance.",
+    "Same dimensions: work–torque–energy; pressure–stress–energy density; Planck's constant–angular momentum.",
+    "Dimensional analysis cannot find numerical constants.",
+    "Relative errors add for products and quotients; multiply by the power.",
+    "Leading zeros are never significant; trailing zeros after a decimal point are.",
+  ],
+  mcq: [
+    ["The dimensional formula of Planck's constant is the same as that of:", ["Linear momentum", "Energy", "Angular momentum", "Power"], 2, "h = E/ν has units J·s, giving [M L² T⁻¹], the same as angular momentum."],
+    ["Which pair has the same dimensions?", ["Work and power", "Torque and work", "Momentum and force", "Stress and strain"], 1, "Torque and work are both [M L² T⁻²]."],
+    ["The number of significant figures in 0.006020 is:", ["3", "4", "5", "6"], 1, "Leading zeros don't count. 6, 0, 2, 0 are significant: 4 figures."],
+    ["The radius of a sphere is measured with 1% error. The error in its volume is:", ["1%", "2%", "3%", "4%"], 2, "V ∝ r³, so the error is 3 × 1% = 3%."],
+    ["Light year is a unit of:", ["Time", "Speed", "Distance", "Intensity of light"], 2, "It is the distance light travels in one year, about 9.46 × 10¹⁵ m."],
+    ["The dimensional formula of the coefficient of viscosity is:", ["[M L⁻¹ T⁻¹]", "[M L T⁻¹]", "[M L⁻² T⁻²]", "[M L² T⁻¹]"], 0, "From F = ηA(dv/dx): η = F/(A × dv/dx) = [M L T⁻²]/([L²][T⁻¹]) = [M L⁻¹ T⁻¹]."],
+    ["The dimensions of the universal gravitational constant G are:", ["[M L² T⁻²]", "[M⁻¹ L³ T⁻²]", "[M⁻¹ L² T⁻²]", "[M L³ T⁻²]"], 1, "G = Fr²/(m₁m₂) = [M L T⁻²][L²]/[M²] = [M⁻¹ L³ T⁻²]."],
+    ["If force F, length L and time T are taken as base quantities, the dimensions of mass are:", ["[F L T⁻²]", "[F L⁻¹ T²]", "[F L⁻¹ T⁻²]", "[F² L T]"], 1, "F = ma, so m = F/a = F/(L T⁻²) = [F L⁻¹ T²]."],
+    ["The result of 2.5 × 3.42 with correct significant figures is:", ["8.55", "8.6", "8.5", "9"], 1, "2.5 has 2 significant figures, so 8.55 rounds to 8.6."],
+    ["Which of these is dimensionless?", ["Strain", "Stress", "Pressure", "Surface tension"], 0, "Strain = change in length / original length, a ratio of the same quantities."],
+    ["In P = a/b where P is pressure and b has dimensions of length², the dimensions of a are those of:", ["Energy", "Force", "Momentum", "Power"], 1, "a = P × b = [M L⁻¹ T⁻²][L²] = [M L T⁻²], which is force."],
+    ["Errors in measuring mass and speed of a body are 2% and 3%. The maximum error in kinetic energy is:", ["5%", "6%", "8%", "1%"], 2, "KE = ½mv². Error = 2% + 2 × 3% = 8%."],
+  ],
+});

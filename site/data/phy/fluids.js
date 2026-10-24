@@ -1,0 +1,55 @@
+NEET.ch("phy-fluids", {
+  intro: "Pressure · Pascal's law · Buoyancy · Bernoulli's principle · Viscosity · Stokes' law · Surface tension · Capillarity",
+  given: "Take g = 10 m/s², density of water = 1000 kg/m³, 1 atm ≈ 1.01 × 10⁵ Pa.",
+  secs: [
+    ["Pressure and Pascal's Law", [
+      ["box", "Pressure", ["P = F/A (Pa = N/m²)", "At depth h: P = P<sub>a</sub> + ρgh", "Gauge pressure = P − P<sub>a</sub> = ρgh"]],
+      ["ul", ["Pressure at a depth is the same in all directions and doesn't depend on the shape of the vessel (hydrostatic paradox).", "<b>Pascal's law:</b> pressure applied to an enclosed fluid is transmitted undiminished everywhere. Used in hydraulic lifts and brakes: F₂/F₁ = A₂/A₁."]],
+      ["ex", "A hydraulic lift has pistons of area 10 cm² and 1000 cm². What force on the small piston lifts a 1000 kg car?", "F₁ = mg × A₁/A₂ = 10⁴ × 10/1000 = <b>100 N</b>."],
+      ["ex", "Find the gauge pressure 10 m below the surface of water.", "ρgh = 1000 × 10 × 10 = <b>10⁵ Pa</b> (about 1 atm)."],
+    ]],
+    ["Archimedes' Principle and Floating", [
+      ["box", "Buoyancy", ["Buoyant force = weight of fluid displaced = ρ<sub>fluid</sub> V<sub>sub</sub> g", "Floating: fraction submerged = ρ<sub>body</sub> / ρ<sub>fluid</sub>"]],
+      ["ex", "Ice (ρ = 900 kg/m³) floats in water. What fraction is above water?", "Submerged fraction = 0.9, so <b>10%</b> is above water."],
+    ]],
+    ["Streamline Flow and Bernoulli's Principle", [
+      ["box", "Flow of an ideal fluid", ["Equation of continuity: A₁v₁ = A₂v₂ (narrow pipe → faster flow)", "Bernoulli: P + ½ρv² + ρgh = constant along a streamline", "Torricelli: speed of efflux from depth h: v = √(2gh)", "Reynolds number R<sub>e</sub> = ρvD/η; flow is turbulent above ≈ 2000"]],
+      ["ul", ["Where speed is high, pressure is low: aeroplane lift, roofs blown off in storms, the curve of a spinning ball (Magnus effect), atomiser sprays.", "A venturimeter measures flow speed using the pressure drop at a narrow throat."]],
+      ["ex", "Water flows at 2 m/s through a pipe of area 4 cm², which narrows to 1 cm². Find the speed in the narrow part.", "v₂ = A₁v₁/A₂ = 4 × 2/1 = <b>8 m/s</b>."],
+      ["ex", "A tank has a hole 5 m below the water surface. Find the speed of water flowing out.", "v = √(2 × 10 × 5) = <b>10 m/s</b>."],
+    ]],
+    ["Viscosity and Stokes' Law", [
+      ["box", "Viscosity", ["F = ηA (dv/dx); η in Pa s (poise in CGS; 1 Pa s = 10 poise)", "Stokes' law: F = 6πηrv", "Terminal velocity: v<sub>t</sub> = 2r²(ρ − σ)g / 9η"]],
+      ["ul", ["Viscosity of liquids decreases with temperature; that of gases increases.", "v<sub>t</sub> ∝ r²: bigger raindrops fall faster."]],
+      ["ex", "Two identical drops falling at terminal speed 5 cm/s merge into one. Find the new terminal speed.", "Volume doubles, so r' = 2<sup>1/3</sup>r. v ∝ r²: v' = 2<sup>2/3</sup> × 5 ≈ <b>7.9 cm/s</b>."],
+    ]],
+    ["Surface Tension and Capillarity", [
+      ["box", "Surface tension", ["S = F/L = surface energy per unit area (N/m or J/m²)", "Excess pressure: drop 2S/r, soap bubble 4S/r (two surfaces)", "Capillary rise: h = 2S cosθ / (rρg)", "Work to form a bubble of radius r: 8πr²S"]],
+      ["ul", ["Surface tension decreases with temperature and with impurities like detergent.", "Water wets glass (θ < 90°) and rises; mercury doesn't (θ > 90°) and falls.", "h ∝ 1/r (Jurin's law): narrower tube, higher rise.", "Drops are spherical because a sphere has the least surface area for a given volume."]],
+      ["ex", "Find the excess pressure inside a soap bubble of radius 1 cm (S = 0.03 N/m).", "ΔP = 4S/r = 4 × 0.03/0.01 = <b>12 Pa</b>."],
+      ["tip", "In a capillary of insufficient length, water does not overflow; it just changes the radius of its meniscus so that hR stays constant."],
+    ]],
+  ],
+  rev: [
+    "Pressure at depth: P<sub>a</sub> + ρgh, independent of vessel shape.",
+    "A₁v₁ = A₂v₂; faster flow ↔ lower pressure.",
+    "Efflux speed √(2gh).",
+    "Terminal velocity ∝ r².",
+    "Bubble excess pressure 4S/r; drop 2S/r.",
+    "Viscosity: liquids ↓ with T, gases ↑ with T.",
+  ],
+  mcq: [
+    ["The speed of efflux of water from a hole 20 m below the surface is:", ["10 m/s", "20 m/s", "14 m/s", "40 m/s"], 1, "√(2 × 10 × 20) = 20 m/s."],
+    ["The excess pressure inside a soap bubble of radius r and surface tension S is:", ["2S/r", "4S/r", "S/r", "8S/r"], 1, "A soap bubble has two surfaces: 4S/r."],
+    ["Terminal velocity of a small sphere in a viscous fluid is proportional to:", ["r", "r²", "1/r", "r³"], 1, "v<sub>t</sub> = 2r²(ρ − σ)g/9η."],
+    ["The viscosity of a gas, when its temperature increases:", ["Decreases", "Increases", "Stays constant", "Becomes zero"], 1, "Gas molecules move faster and transfer more momentum between layers."],
+    ["Water flows through a pipe that narrows to half its area. The speed in the narrow part becomes:", ["Half", "Double", "Four times", "Same"], 1, "Av = constant."],
+    ["The working of a hydraulic lift is based on:", ["Bernoulli's principle", "Pascal's law", "Archimedes' principle", "Stokes' law"], 1, "Pressure is transmitted equally in an enclosed fluid."],
+    ["Lift on an aeroplane wing is explained by:", ["Pascal's law", "Bernoulli's principle", "Stokes' law", "Hooke's law"], 1, "Faster air over the wing means lower pressure above it."],
+    ["A block of density 600 kg/m³ floats in water. The fraction of its volume submerged is:", ["0.4", "0.6", "0.5", "1"], 1, "ρ<sub>body</sub>/ρ<sub>water</sub> = 0.6."],
+    ["Capillary rise in a tube is h. In a tube of half the radius, the rise is:", ["h/2", "h", "2h", "4h"], 2, "h ∝ 1/r."],
+    ["Mercury in a glass capillary:", ["Rises", "Falls", "Stays level", "Boils"], 1, "Angle of contact is obtuse, so cosθ < 0."],
+    ["Surface tension of a liquid on adding detergent:", ["Increases", "Decreases", "Stays the same", "Becomes infinite"], 1, "Detergents lower surface tension, helping water wet the cloth."],
+    ["The SI unit of coefficient of viscosity is:", ["N s/m²", "N m/s", "N/m", "J/m²"], 0, "η = F/(A dv/dx) → N s m⁻² = Pa s."],
+  ],
+});

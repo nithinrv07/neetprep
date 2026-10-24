@@ -1,0 +1,42 @@
+rules_version = '2';
+
+// NEET Prep Notebook — Firestore security rules.
+// Paste into Firebase console → Firestore Database → Rules, replace the admin email, then Publish.
+// Students: read and write only their own data. Admin: read everyone's data (never write it).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // The admin must sign up with this email AND click the verification link Firebase emails.
+    function isAdmin() {
+      return signedIn()
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['nithinramu7@gmail.com'];
+    }
+
+    // The site reads this document only to find out whether the signed-in person is an admin.
+    match /meta/admin {
+      allow read: if isAdmin();
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow create, update: if signedIn() && request.auth.uid == uid;
+      allow delete: if false;
+
+      // progress (data/state), tests and activity log
+      match /{rest=**} {
+        allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+        allow write: if signedIn() && request.auth.uid == uid;
+      }
+    }
+
+    // Lets the admin dashboard list every student's tests in one query.
+    match /{path=**}/tests/{testId} {
+      allow read: if isAdmin();
+    }
+  }
+}
