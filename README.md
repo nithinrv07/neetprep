@@ -12,4 +12,5 @@ Live: https://neet-prep-notebook.vercel.app
 - `FIREBASE-SETUP.md` — how the Firebase project is set up
 
 ## Deploy
-From `site/`: `vercel --prod`
+Pushing to `main` deploys to production automatically (Vercel builds from the `site/` folder).
+Manual deploy, if ever needed: from `site/` run `vercel --prod`.
