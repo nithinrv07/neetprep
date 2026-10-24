@@ -463,6 +463,8 @@ function testResult(id, filter = "all", opts = {}) {
 
 /* ---------- sign-in ---------- */
 let authMode = "in";
+const EYE_OPEN = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>`;
+const EYE_SHUT = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 5.1A9.8 9.8 0 0 1 12 5c6.5 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.2M6.6 6.6C3.8 8.4 2 12 2 12s3.5 7 10 7a9.6 9.6 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>`;
 function loginView(msg = "") {
   document.body.classList.add("signed-out");
   const up = authMode === "up";
@@ -476,7 +478,11 @@ function loginView(msg = "") {
       <form id="authForm" class="stack" style="gap:12px" novalidate>
         ${up ? `<label class="field"><span>Your name</span><input class="input" id="authName" autocomplete="name" required></label>` : ""}
         <label class="field"><span>Email</span><input class="input" id="authEmail" type="email" autocomplete="email" required></label>
-        <label class="field"><span>Password</span><input class="input" id="authPw" type="password" autocomplete="${up ? "new-password" : "current-password"}" minlength="6" required>${up ? `<small class="muted">At least 6 characters.</small>` : ""}</label>
+        <div class="field"><label for="authPw">Password</label>
+          <div class="pw-wrap">
+            <input class="input" id="authPw" type="password" autocomplete="${up ? "new-password" : "current-password"}" minlength="6" required>
+            <button type="button" class="pw-toggle" data-act="toggle-pw" aria-controls="authPw" aria-pressed="false" aria-label="Show password" title="Show password">${EYE_OPEN}</button>
+          </div>${up ? `<small class="muted">At least 6 characters.</small>` : ""}</div>
         <p class="auth-msg" id="authMsg" role="alert">${msg}</p>
         <button class="btn primary" type="submit" id="authSubmit">${up ? "Create account" : "Sign in"}</button>
         ${up ? "" : `<button type="button" class="linkbtn" data-act="auth-reset">Forgot password?</button>`}
@@ -679,6 +685,17 @@ document.addEventListener("click", e => {
   const parts = location.hash.replace(/^#\/?/, "").split("/");
   const id = parts[1];
   if (act === "auth-mode") { authMode = b.dataset.m; loginView(); return; }
+  if (act === "toggle-pw") {
+    const inp = document.getElementById("authPw"), show = inp.type === "password";
+    const pos = inp.selectionStart;
+    inp.type = show ? "text" : "password";
+    b.innerHTML = show ? EYE_SHUT : EYE_OPEN;
+    b.setAttribute("aria-pressed", show);
+    b.setAttribute("aria-label", show ? "Hide password" : "Show password");
+    b.title = show ? "Hide password" : "Show password";
+    inp.focus(); if (pos !== null) inp.setSelectionRange(pos, pos);
+    return;
+  }
   if (act === "auth-reset") {
     const email = document.getElementById("authEmail").value, msg = document.getElementById("authMsg");
     if (!email) { msg.textContent = "Type your email above, then tap Forgot password again."; return; }

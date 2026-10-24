@@ -345,3 +345,9 @@ body.signed-out { padding-bottom: 0; }
 .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; max-height: 460px; overflow-y: auto; border: 1px solid var(--rule); border-radius: 12px; background: var(--card); }
 .timeline li { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 10px; padding: 9px 14px; border-bottom: 1px solid var(--rule); font-size: 14.5px; }
 .timeline li:last-child { border-bottom: 0; }
+.field > label { font-weight: 700; font-size: 14px; }
+.pw-wrap { position: relative; }
+.pw-wrap .input { padding-right: 52px; }
+.pw-toggle { position: absolute; top: 50%; right: 4px; transform: translateY(-50%); width: 44px; height: 40px; display: grid; place-items: center; border: 0; border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; }
+.pw-toggle:hover, .pw-toggle[aria-pressed="true"] { color: var(--ink); background: var(--card-2); }
+.pw-wrap .input::-ms-reveal { display: none; }
